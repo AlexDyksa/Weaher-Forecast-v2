@@ -8,6 +8,8 @@ import App from './App';
 import store from './store';
 import * as serviceWorker from './serviceWorker';
 
+console.log(store)
+
 render(
     <BrowserRouter>
         <Provider store={store}>
