@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import History from '../History';
+
 class Form extends Component {
     handleSubmitForm = e => {
         e.preventDefault();
@@ -46,6 +48,7 @@ class Form extends Component {
                 >
                     Get Forecast
                 </button>
+                <History data={this.props.city} />
             </form>
         );
     }

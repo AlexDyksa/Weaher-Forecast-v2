@@ -9,7 +9,6 @@ const Day = (props) => (
         </p>
         <p>Min temp: {props.data.day.mintemp_c}</p>
         <p>Max temp: {props.data.day.maxtemp_c}</p>
-        <p>Max temp: {props.data.day.maxtemp_c}</p>
     </div>
 );
 
