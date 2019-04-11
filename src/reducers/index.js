@@ -2,7 +2,7 @@ import { CHANGED_CITY_NAME, FETCHED_DATA } from '../actions/types';
 
 const initialState = {
     enteredCityName: '',
-    city: ''
+    city: []
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -10,7 +10,18 @@ const rootReducer = (state = initialState, action) => {
         case CHANGED_CITY_NAME:
             return { ...state, enteredCityName: action.payload };
         case FETCHED_DATA:
-            return { ...state, city: action.payload };
+            let city = null;
+
+            if (state.city.length < 4) {
+                city = [...state.city, action.payload];
+            } else {
+                city = state.city.slice(1);
+                city.push(action.payload);
+            }
+            return {
+                ...state,
+                city: city
+            }
         default:
             return state;
     }
