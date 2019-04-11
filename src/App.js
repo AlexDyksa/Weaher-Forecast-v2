@@ -11,7 +11,6 @@ class App extends Component {
         return (
             <div className="app">
                 <Route path="/" component={Form} exact />
-
                 <Switch>
                     <Route path="/" component={Weather} exact />
                     <Route path="/details" component={Forecast} />
