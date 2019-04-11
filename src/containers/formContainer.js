@@ -5,7 +5,8 @@ import Form from '../components/Form';
 import { changeCityName, fetchData } from '../actions/formActions';
 
 const mapStateToProps = state => ({
-    enteredCityName: state.enteredCityName
+    enteredCityName: state.enteredCityName,
+    city: state.city
 });
 
 const mapDispatchToProps = dispatch => ({
