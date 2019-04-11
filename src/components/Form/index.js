@@ -3,12 +3,34 @@ import React, { Component } from 'react';
 class Form extends Component {
     handleSubmitForm = e => {
         e.preventDefault();
-        // this.getWeatherData();
+        this.getWeatherData();
     };
 
     handleChangeCityName = e => {
         this.props.changeCityName(e.target.value);
     };
+
+    getWeatherData = async () => {
+        const daysOfForecast = 3;
+        const API_KEY = 'b7a955a0c43d4bc482261947191104';
+        const API_URL = `http://api.apixu.com/v1/forecast.json?key=${API_KEY}&q=${this.props.enteredCityName}&days=${daysOfForecast}`;
+
+        const response = await fetch(API_URL);
+        const data = await response.json();
+
+        const tranformedData = {
+            id: Date.now(),
+            city: data.location.name,
+            country: data.location.country,
+            condition: data.current.condition.text,
+            conditionIcon: data.current.condition.icon,
+            temp: data.current.temp_c,
+            forecastDay: data.forecast.forecastday
+        };
+
+        this.props.fetchData(tranformedData);
+    }
+
 
     render() {
         return (
