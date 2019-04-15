@@ -1,2 +1,4 @@
 export const CHANGED_CITY_NAME = 'CHANGED_CITY_NAME';
 export const FETCHED_DATA = 'FETCHED_DATA';
+export const CHOOSE_HISTORY = 'CHOOSE_HISTORY';
+export const RESET_HISTORY = 'RESET_HISTORY';

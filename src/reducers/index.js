@@ -1,8 +1,9 @@
-import { CHANGED_CITY_NAME, FETCHED_DATA } from '../actions/types';
+import { CHANGED_CITY_NAME, FETCHED_DATA, CHOOSE_HISTORY, RESET_HISTORY } from '../actions/types';
 
 const initialState = {
     enteredCityName: '',
-    city: []
+    city: [],
+    historyCityId: ''
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -21,7 +22,11 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 city: city
-            }
+            };
+        case CHOOSE_HISTORY:
+            return { ...state, historyCityId: action.payload };
+        case RESET_HISTORY:
+            return { ...state, historyCityId: action.payload };
         default:
             return state;
     }

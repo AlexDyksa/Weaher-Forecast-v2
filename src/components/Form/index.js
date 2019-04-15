@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import History from '../History';
+import History from '../../containers/historyContainer';
 
 class Form extends Component {
     handleSubmitForm = e => {
@@ -29,7 +29,7 @@ class Form extends Component {
             temp: data.current.temp_c,
             forecastDay: data.forecast.forecastday
         };
-
+        this.props.resetHistory();
         this.props.fetchData(tranformedData);
     }
 
@@ -48,7 +48,7 @@ class Form extends Component {
                 >
                     Get Forecast
                 </button>
-                <History data={this.props.city} />
+                <History />
             </form>
         );
     }
