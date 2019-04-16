@@ -6,6 +6,7 @@ import './styles.css';
 class Form extends Component {
     handleSubmitForm = e => {
         e.preventDefault();
+        this.props.resetHistory();
         this.getWeatherData();
     };
 
@@ -21,7 +22,7 @@ class Form extends Component {
         const response = await fetch(API_URL);
         const data = await response.json();
 
-        const tranformedData = {
+        const transformedData = {
             id: Date.now(),
             city: data.location.name,
             country: data.location.country,
@@ -30,8 +31,7 @@ class Form extends Component {
             temp: data.current.temp_c,
             forecastDay: data.forecast.forecastday
         };
-        this.props.resetHistory();
-        this.props.fetchData(tranformedData);
+        this.props.fetchData(transformedData);
     }
 
 

@@ -33,3 +33,7 @@
     margin-top: 20px;
     display: inline-block;
 }
+
+.weather__forecast:visited {
+    color: #2b75b1;
+}

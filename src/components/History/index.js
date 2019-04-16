@@ -6,8 +6,8 @@ import './styles.css';
 class History extends Component {
     handleClick = (e) => {
         e.preventDefault();
-        const id = e.currentTarget.getAttribute('id');
-        this.props.chooseHistory(id);
+        const cityId = e.currentTarget.getAttribute('id');
+        this.props.chooseHistory(cityId);
     }
 
     render() {
@@ -25,7 +25,7 @@ class History extends Component {
         );
 
         return (
-            <div className="history">
+            <div className="app__history history">
                 {links}
             </div>
         );

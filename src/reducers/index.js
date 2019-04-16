@@ -9,10 +9,12 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
         case CHANGED_CITY_NAME:
-            return { ...state, enteredCityName: action.payload };
+            return {
+                ...state,
+                enteredCityName: action.payload
+            };
         case FETCHED_DATA:
             let city = null;
-
             if (state.city.length < 4) {
                 city = [...state.city, action.payload];
             } else {
@@ -24,9 +26,15 @@ const rootReducer = (state = initialState, action) => {
                 city: city
             };
         case CHOOSE_HISTORY:
-            return { ...state, historyCityId: action.payload };
+            return {
+                ...state,
+                historyCityId: action.payload
+            };
         case RESET_HISTORY:
-            return { ...state, historyCityId: action.payload };
+            return {
+                ...state,
+                historyCityId: action.payload
+            };
         default:
             return state;
     }

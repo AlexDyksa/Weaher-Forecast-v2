@@ -1,0 +1,12 @@
+.day {
+    padding: 5px;
+    text-align: center;
+}
+
+.day p {
+    margin: 5px 0;
+}
+
+.day__date {
+    font-weight: bold;
+}

@@ -3,7 +3,7 @@ import React from 'react';
 import './styles.css';
 
 const Logo = () => (
-    <div className="logo">
+    <div className="app__logo logo">
         Weather Forecast
         <div className="logo__icons">
             <i className="fas fa-cloud"></i>

@@ -1,4 +1,33 @@
 .forecast {
-   overflow: auto; 
-   width: 100%;
+    text-align: center;
+}
+.forecast__title {
+    position: relative;
+    margin-bottom: 15px;
+    font-size: 26px;
+}
+
+.forecast__title:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #2b75b1;
+    top: 50px;
+}
+
+.forecast__days {
+    display: flex;
+    justify-content: space-between;
+}
+
+.forecast__link-back {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.forecast__link-back:visited {
+    color: #2b75b1;
 }
