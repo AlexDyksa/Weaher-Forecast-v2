@@ -1,0 +1,9 @@
+.history {
+    width: 100%;
+}
+
+.history a {
+    color: #2b75b1;
+    margin: 0 2px;
+    font-size: 14px;
+}

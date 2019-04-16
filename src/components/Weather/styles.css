@@ -1,0 +1,35 @@
+.weather {
+    text-align: center;
+}
+
+.weather__title {
+    text-align: center;
+    position: relative;
+    margin-bottom: 15px;
+    font-size: 26px;
+}
+
+.weather__title:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #2b75b1;
+    top: 50px;
+}
+
+.weather__condition {
+    font-size: 35px;
+}
+
+.weather p {
+    margin: 0;
+    padding: 0;
+}
+
+.weather__forecast {
+    margin-top: 20px;
+    display: inline-block;
+}

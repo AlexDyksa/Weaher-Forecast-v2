@@ -1,0 +1,21 @@
+.app {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #222;
+}
+.app__inner {
+    border-radius: 4px;
+    width: 50%;
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    border: 1px solid #2b75b1;
+    justify-content: space-between;
+}
+
+.app__content {
+    width: 70%;
+    padding: 10px;
+}

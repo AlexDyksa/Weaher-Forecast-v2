@@ -1,0 +1,43 @@
+.app__form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+.app__search {
+    font-size: 20px;
+    padding: 6px 6px;
+    margin-right: 15px;
+    font-family: 'Oswald', sans-serif;
+    height: 40px;
+    box-sizing: border-box;
+    width: 279px;
+    text-transform: capitalize;
+    border:1px solid #2b75b1;
+
+}
+
+.app__submit {
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    background-color: #2b75b1;
+    border: none;
+    /* padding: 10px; */
+    width: 140px;
+    outline: none;
+    height: 40px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.app__submit-inactive {
+    background-color: #777;
+}
+
+.app__submit:not(.app__submit-inactive):hover {
+    background-color: #fff;
+    color: #2b75b1;
+    border: 1px solid #2b75b1;
+}

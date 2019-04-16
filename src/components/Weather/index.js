@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import './styles.css';
+
 class Weather extends React.Component {
     render() {
         const historyCityId = this.props.historyCityId;
@@ -11,12 +13,11 @@ class Weather extends React.Component {
         return (
             <React.Fragment>
                 {city && <div className="weather">
-                    <p>City: {city.city}</p>
-                    <p>Country: {city.country}</p>
-                    <p>Condition: <img src={`${city.conditionIcon}`} alt={`${city.condition}`} /></p>
-                    <p>Temperature: {city.temp}</p>
-
-                    <Link to="/details">Details</Link>
+                    <h1 className="weather__title">Current weather in {city.city}</h1>
+                    <p><img src={`${city.conditionIcon}`} alt={`${city.condition}`} /></p>
+                    <p>{city.condition}</p>
+                    <p className="weather__condition">{city.temp}&#8451;</p>
+                    <Link to="/details" className="weather__forecast">Get Forecast fo 3 days</Link>
                 </div>
                 }
             </React.Fragment>

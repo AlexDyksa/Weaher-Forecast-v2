@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import History from '../../containers/historyContainer';
+import './styles.css';
 
 class Form extends Component {
     handleSubmitForm = e => {
@@ -36,14 +37,16 @@ class Form extends Component {
 
     render() {
         return (
-            <form action="" className="form" onSubmit={this.handleSubmitForm}>
+            <form action="" className="app__form" onSubmit={this.handleSubmitForm}>
                 <input
                     type="text"
+                    className="app__search"
                     placeholder="Enter City Name"
                     value={this.props.enteredCityName}
                     onChange={this.handleChangeCityName}
                 />
                 <button
+                    className={!this.props.enteredCityName ? 'app__submit app__submit-inactive' : 'app__submit'}
                     disabled={!this.props.enteredCityName ? true : false}
                 >
                     Get Forecast

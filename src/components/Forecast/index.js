@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import Day from '../Day';
+import './styles.css';
 
 class Forecast extends Component {
     render() {
