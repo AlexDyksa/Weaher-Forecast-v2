@@ -12,13 +12,16 @@ class Weather extends React.Component {
 
         return (
             <React.Fragment>
-                {city && <div className="app__weather weather">
-                    <h1 className="weather__title">Current weather in {city.city}</h1>
-                    <p><img src={`${city.conditionIcon}`} alt={`${city.condition}`} /></p>
-                    <p>{city.condition}</p>
-                    <p className="weather__condition">{city.temp}&#8451;</p>
-                    <Link to="/details" className="weather__forecast">Get Forecast for 3 days</Link>
-                </div>
+                {
+                    !this.props.error ?
+                        city && <div className="app__weather weather">
+                            <h1 className="weather__title">Current weather in {city.city}</h1>
+                            <p><img src={`${city.conditionIcon}`} alt={`${city.condition}`} /></p>
+                            <p>{city.condition}</p>
+                            <p className="weather__condition">{city.temp}&#8451;</p>
+                            <Link to="/details" className="weather__forecast">Get Forecast for 3 days</Link>
+                        </div>
+                        : <p className="app__error">Incorrect City Name :(</p>
                 }
             </React.Fragment>
         );

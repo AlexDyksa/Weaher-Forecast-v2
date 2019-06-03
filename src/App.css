@@ -22,3 +22,7 @@
     flex-direction: column;
     justify-content: center;
 }
+
+.app__error {
+    color: red;
+}

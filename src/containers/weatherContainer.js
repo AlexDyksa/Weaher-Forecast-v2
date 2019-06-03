@@ -7,6 +7,7 @@ import { resetHistory } from '../actions/historyActions';
 const mapStateToProps = state => ({
     data: state.city,
     historyCityId: state.historyCityId,
+    error: state.error
 });
 
 const mapDispatchToProps = dispatch => ({

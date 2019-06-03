@@ -15,23 +15,29 @@ class Form extends Component {
     };
 
     getWeatherData = async () => {
-        const daysOfForecast = 3;
-        const API_KEY = 'b7a955a0c43d4bc482261947191104';
-        const API_URL = `http://api.apixu.com/v1/forecast.json?key=${API_KEY}&q=${this.props.enteredCityName}&days=${daysOfForecast}`;
+        try {
+            const daysOfForecast = 3;
+            const API_KEY = 'b7a955a0c43d4bc482261947191104';
+            const API_URL = `http://api.apixu.com/v1/forecast.json?key=${API_KEY}&q=${this.props.enteredCityName}&days=${daysOfForecast}`;
 
-        const response = await fetch(API_URL);
-        const data = await response.json();
+            const response = await fetch(API_URL);
+            const data = await response.json();
 
-        const transformedData = {
-            id: Date.now(),
-            city: data.location.name,
-            country: data.location.country,
-            condition: data.current.condition.text,
-            conditionIcon: data.current.condition.icon,
-            temp: data.current.temp_c,
-            forecastDay: data.forecast.forecastday
-        };
-        this.props.fetchData(transformedData);
+            const transformedData = {
+                id: Date.now(),
+                city: data.location.name,
+                country: data.location.country,
+                condition: data.current.condition.text,
+                conditionIcon: data.current.condition.icon,
+                temp: data.current.temp_c,
+                forecastDay: data.forecast.forecastday,
+                error: false
+            };
+            this.props.fetchData(transformedData);
+        } catch(error) {
+            this.props.fetchData({error: true});
+        }
+        
     }
 
 
